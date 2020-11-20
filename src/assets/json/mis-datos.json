@@ -1,0 +1,14 @@
+{
+    "nombreEmpresa": "Prodeco S.A de C.V",
+    "rfc": "GAAR123514HD",
+    "correoPrincipal": "prodeco@prodeco.com",
+    "telefono": "618-254-4823",
+    "whatsapp": "618-106-2352",
+    "domicilio": {
+            "calle": "Pereyra",
+            "numero": "17",
+            "cp": "34000",
+            "colonia": "Zona Centro",
+            "ciudad": "Durango"
+    }    
+}

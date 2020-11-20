@@ -1,1 +1,426 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #2033FA;
+  --primary-light: rgb(153, 172, 255);
+  --primary-hover: #1b00ca;
+  --primary-active: #15009d;
+  --danger: #db0000;
+  --danger-hover: #d61919;
+  --dark: #2f2f2f;
+  --dark-light: #d3d3d3;
+  --success: #008805;
+  --success-hover: #005e03;
+}
+
+html {
+  line-height: 1;
+  font-size: 62.5%; 
+  box-sizing: border-box;
+  font-family: PT-Sans, sans-serif;
+}
+ 
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.5rem;
+  background-color: rgb(240, 240, 240);
+}
+
+h1, h2, h3, h3, h4, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ..........................................................................
+  utilidades
+.......................................................................... */
+
+.contenedor {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contenedor-lg {
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* ------------------------ WIDTH */
+
+.w-100 {
+  width: 100% !important;
+}
+.w-95 {
+  width: 95% !important;
+}
+.w-75 {
+  width: 75% !important;
+}
+.w-50 {
+  width: 50% !important;
+}
+.w-25 {
+  width: 25% !important;
+}
+
+/* -----------------------TEXT ALIGN */
+
+.centrar {
+  margin: 0 auto !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* ------------------------ MARGINS */
+
+/* ------------------ top */
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+/* ------------------ bottom */
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+/* ------------------ left */
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
+}
+
+.ml-3 {
+  margin-left: 3rem;
+}
+
+/* ------------------ right */
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.mr-3 {
+  margin-right: 3rem;
+}
+
+/* ------------------ top-bottom */
+
+.mtb-1 {
+  margin: 1rem 0;
+}
+
+.mtb-2 {
+  margin: 2rem 0;
+}
+
+/* ------------------------ PADDINGS */
+.pd-0 {
+  padding: 0 !important;
+}
+
+.pd-1 {
+  padding: 1rem !important;
+}
+
+.pd-2 {
+  padding: 2rem !important;
+}
+
+.ptb-1 {
+  padding: 1rem 0 !important;
+}
+
+.ptb-2 {
+  padding: 2rem 0 !important;
+}
+
+.plr-1 {
+  padding: 0 1rem !important;
+}
+
+.plr-2 {
+  padding: 0 2rem !important;
+}
+/* ------------------------ FONT */
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+/* ------------------------ DISPLAY */
+
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+/* ..........................................................................
+  botones
+.......................................................................... */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 300;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid gray;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+/* Primary */
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: white;
+  border: none;
+}
+
+/* .btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:active {
+  background-color: var(--primary-active);
+}
+
+.btn-primary-outline {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid var(--primary);
+}
+
+.btn-primary-outline:hover {
+  border: 2px solid var(--primary);
+} */
+
+/* Danger */
+
+/* ..........................................................................
+  cards
+.......................................................................... */
+
+.card {
+  padding: 2rem;
+  background-color: white;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 5px;
+}
+/* ..........................................................................
+  badges
+.......................................................................... */
+
+.badge {
+  cursor: default;
+  display: inline-block;
+  text-align: center;
+  background-color: var(--danger);
+  color: white;
+  border-radius: 2px;
+  width: 2rem;
+}
+
+/* ..........................................................................
+  form-input
+.......................................................................... */
+
+.form-input {
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding: 1rem 0.5rem;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #999999;
+  background-color: #e2e2e2;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-input:focus {
+  outline: 1px solid #2094fa;
+  outline-style: auto;
+  background-color: var(--dark-light);
+  color: black;
+  font-weight: 700;
+}
+
+.form-input:disabled {
+  background-color: #d1d1d1;
+}
+
+.form-input:disabled::placeholder {
+  color: #333333;
+}
+
+.form-input.ng-invalid.ng-touched {
+  border-color: var(--danger);
+  border-width: 2px;
+}
+
+.form-input.ng-valid.ng-touched {
+  border-color: var(--success);
+}
+
+.form-campo label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-fieldset {
+  border: 1px solid #8e8e8e;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form-fieldset legend {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 7px;
+  margin-left: 1rem;
+}
+
+/* ..........................................................................
+  tablas
+.......................................................................... */
+
+.tabla {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabla td {
+  text-align: center;
+  padding: 0.7rem 0;
+}
+
+.thead-dark th {
+  border: 1px solid black;
+  padding: 0.5rem 0;
+  background-color: #2f2f2f;
+  color: white;
+}
+
+td.dark-light {
+  background-color: var(--dark);
+  color: #ffffff;
+}
+
+table tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* ..........................................................................
+  
+.......................................................................... */
+
+.registro {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 12%;
+  margin: 0 auto;
+  background-color: gray;
+  border-radius: 4%;
+  border: solid 10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
+}
+
+.row {
+  margin: 0;
+}

@@ -1,0 +1,147 @@
+<div class="contenedor fadeIn fast">
+    <form [formGroup]="formProducto" (ngSubmit)="guardar()">
+        <div class="section">
+            <h2>Agregar un producto</h2>
+            <button class="btn btn-success agregar" type="button" (click)="guardar()">
+                <i class="fa fa-save"></i> Guardar
+            </button>
+            <button class="btn btn-danger cancelar" type="button" (click)="resetFormulario()" [routerLink]="['/mis-productos']">
+                <i class="fa fa-times"></i> Cancelar
+            </button>
+            <div class="general mt-2">
+                <div
+                    appNgDropFiles [archivos]="archivos"
+                    (mouseSobre)="sobreDrop = $event"
+                    [class.file-over]="sobreDrop"
+                    class="imagen">
+                    <div *ngIf="archivos.length === 0" class="imagen-contenido text-center">
+                        <i class="fa fa-7x fa-camera"></i>
+                        <p class="w-50 centrar">Arraste y suelte las imagenes del producto aquí</p>
+                    </div>
+                    <div *ngIf="archivos.length > 0" class="mt-2">
+                        <table class="tabla w-95 centrar" formArrayName="imagenes">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>-</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let archivo of archivos; let e = index">
+                                    <td>{{archivo.archivo.name}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" (click)="eliminarCaracteristica(e, 'imagen')">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>    
+                    </div>
+                </div>
+                <div class="lateral">
+                    <div class="lateral-contenido">
+                        <h3 class="mb-2">Información General</h3>
+                        <div class="form-campo">
+                            <label>Título <span>(Requerido)</span></label>
+                            <input type="text" class="form-input" formControlName="titulo">
+                        </div>
+                        <div class="form-campo">
+                            <label>Cantidad en Stock <span>(Requerido)</span></label>
+                            <input type="number" class="form-input" formControlName="cantidadStock">
+                        </div>
+                        <div class="form-campo">
+                            <label>Precio <span>(Requerido)</span></label>
+                            <input type="number" class="form-input" formControlName="precio">
+                        </div>
+
+                        <div class="form-campo">
+                            <label>Categoria</label>
+                            <select class="form-input" formControlName="categoria">
+                                <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{ categoria.name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fondo-contenido">
+                <div class="form-campo">
+                    <label>Descripción <span>(Requerido)</span></label>
+                    <textarea class="form-input" formControlName="descripcion"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="informacion">
+            <div formArrayName="principales">
+                <div class="section">
+                    <h3 class="text-center">Caracteristicas Principales</h3>
+
+                    <button class="btn btn-primary agregar" type="button" (click)="agregarCaracteristica('principal')">
+                        <i class="fa fa-plus"></i> Agregar
+                    </button>
+
+                    <table class="tabla mt-2">
+                        <thead class="thead-dark">
+                            <th>Titulo</th>
+                            <th>Descripcion</th>
+                            <th>-</th>
+                        </thead>
+                        <tbody *ngFor="let principal of principales.controls; let i = index">
+                            <tr [formGroupName]="i">
+                                <td>
+                                    <input class="form-input w-95 centrar" type="text"
+                                        placeholder="Ejemplo Marca, Modelo, etc" formControlName="titulo">
+                                </td>
+                                <td>
+                                    <input class="form-input w-95 centrar" type="text"
+                                        placeholder="Ingrese la Descripcion" formControlName="desc">
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger"
+                                        (click)="eliminarCaracteristica(i, 'principal')">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> <!-- class caracteristicas -->
+            </div> <!-- formArray Principales -->
+            <div formArrayName="secundarias">
+                <div class="section">
+                    <h3 class="text-center">Otras Caracteristicas</h3>
+                    <button class="btn btn-primary agregar" type="button" (click)="agregarCaracteristica('secundaria')">
+                        <i class="fa fa-plus"></i> Agregar
+                    </button>
+
+                    <table class="tabla mt-2">
+                        <thead class="thead-dark">
+                            <th>Titulo</th>
+                            <th>Descripcion</th>
+                            <th>-</th>
+                        </thead>
+                        <tbody *ngFor="let secundaria of secundarias.controls; let i = index">
+                            <tr [formGroupName]="i">
+                                <td>
+                                    <input class="form-input w-95 centrar" type="text"
+                                        placeholder="Ejemplo Tamaño, Peso, etc." formControlName="titulo">
+                                </td>
+                                <td>
+                                    <input class="form-input w-95 centrar" type="text"
+                                        placeholder="Ingrese la Descripcion" formControlName="desc">
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-danger"
+                                        (click)="eliminarCaracteristica(i, 'secundaria')">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<pre>
+    {{ formProducto.value | json }}
+</pre>

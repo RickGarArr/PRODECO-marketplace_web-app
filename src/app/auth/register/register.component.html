@@ -1,0 +1,55 @@
+<div class="fondo-sign">
+  <div class="contenedor">
+    <h2>Formulario de Registro</h2>
+    <div class="formulario">
+
+      <form (ngSubmit)="onSubmit()" [formGroup]=solicitud>
+        <fieldset>
+          <legend>Datos Generales</legend>
+          
+          <div class="form-up">
+
+            <div class="nombre">
+              <label for="nombre">Nombre de la Empresa</label>
+              <input formControlName="nombre" type="text" name="nombre" class="form-input">
+            </div>
+
+            <div class="tel">
+              <label for="telefono">Telefono</label>
+              <input formControlName="telefono" type="text" name="telefono" class="form-input">
+            </div>
+
+          </div>
+
+          <label for="correo">Dirección de Correo Electrónico</label>
+          <input formControlName="correo" type="text" name="correo" class="form-input">
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Documetos</legend>
+          
+          <div class="doc">
+            <label for="rfc">RFC</label>
+            <input formControlName="rfc" type="file" name="rfc" id="rfc">
+          </div>
+          
+          <div class="doc">
+            <label for="domicilio">Comprobante de Domicilio</label>
+            <input formControlName="domicilio" type="file" name="domicilio" id="domicilio">
+          </div>
+          
+          <div class="doc">
+            <label for="ine">INE</label>
+            <input formControlName="ine" type="file" name="ine" id="ine">
+          </div>
+
+        </fieldset>
+        
+        <div class="boton">
+          <button class="btn btn-primary" type="submit">Registrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

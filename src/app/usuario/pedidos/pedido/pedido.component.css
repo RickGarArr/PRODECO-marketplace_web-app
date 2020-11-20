@@ -1,0 +1,62 @@
+.back-white {
+    background-color: #ffffff;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+/* ----------------------------------------- tablas */
+.tabla-header::after {
+    content: '';
+    display: block;
+    background-color: lightgray;
+    height: 2px;
+    width: 100%;
+}
+
+.tabla-header {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.campo p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.campo span {
+    font-weight: 500;
+}
+
+/* ----------------------------------------- tabla detalles de direccion */
+
+.detalles-pedido .header-row,
+.detalles-pedido .body-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.detalles-pedido .campo {
+    padding: 1rem;
+    text-align: left;
+}
+
+/* ----------------------------------------- tabla detalles del producto*/
+
+.detalles-productos .header-row,
+.detalles-productos .body-row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 2fr;
+}
+
+
+
+.campo, 
+.header-campo {
+    align-self: center;
+    text-align: center;
+}
+
+.detalles-productos .campo:nth-child(4n+1) {
+    text-align: left;
+}

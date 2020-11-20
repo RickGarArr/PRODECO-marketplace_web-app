@@ -1,0 +1,143 @@
+.site-header {
+    background-image: url(../../../assets/img/header.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 260px;
+    height: 25vh;
+    position: relative;
+}
+
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.contenido-header {
+    height: 90%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contenido-header .barra {
+    flex: 0 0 calc(33% - 1rem);
+}
+
+.contenido-header .texto {
+    flex: 0 0 calc(66% - 1rem);
+}
+
+.contenido-header .texto {
+    text-align: center;
+}
+
+.barra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo h2 {
+    text-transform: uppercase;
+    font-size: 3.2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+nav a:last-child {
+    margin-right: 0;
+}
+
+nav a:hover {
+    color: yellowgreen;
+}
+
+.texto h3, p {
+    color: white;
+}
+
+
+/* ..........................................................................
+    Card-Login
+.......................................................................... */
+
+.login-card {
+    padding: 25px;
+    text-align: center;
+    width: 70%;
+    max-width: 560px;
+    min-height: 320px;
+    height: 340px;
+    margin: 0 auto;
+    border: 1px solid #d3d3d3;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    top: -5rem;
+    left: 0;
+}
+
+.login-card h3 {
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+}
+
+.input-recordar input {
+    margin-right: 0.5rem;
+}
+
+form label {
+    /* font-size: 1.2rem;
+    margin-bottom: 0.8rem; */
+    display: inline-block;
+}
+
+form input {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+form small {
+    font-weight: 300;
+    display: block;
+}
+button.btn {
+    margin-bottom: 1rem;
+}
+
+.recordar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin: 0 auto;
+}
+/* ..........................................................................
+    Footer-Sign-Up
+.......................................................................... */
+footer .footer p {
+    padding: 1rem 0 1rem 0;
+    text-align: center;
+    background-color: #212529;
+    margin: 0;
+    color: white;
+}
+
+.btn {
+    padding: 1rem 2rem;
+  }

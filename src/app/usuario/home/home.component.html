@@ -1,0 +1,68 @@
+<div class="contenedor-lg fadeIn fast">
+    <aside class="columna">
+        <div class="pedidos card">
+            
+            <h3 class="text-center">Pedidos</h3>
+            
+            <div class="hoy">
+                <h4>Hoy</h4>
+                <div class="elemento">
+                    <p>Pendientes</p>
+                    <p>0</p>
+                </div>
+                <div class="elemento">
+                    <p>Pendientes de envio</p>
+                    <p>2</p>
+                </div>
+                <div class="elemento">
+                    <p>Entregados</p>
+                    <p>8</p>
+                </div>
+            </div> <!-- hoy -->
+
+            <div class="semana">
+                <h4>Semana</h4>
+                <div class="elemento">
+                    <p>Pendientes</p>
+                    <p>2</p>
+                </div>
+                <div class="elemento">
+                    <p>Pendientes de envio</p>
+                    <p>4</p>
+                </div>
+                <div class="elemento">
+                    <p>Entregados</p>
+                    <p>25</p>
+                </div>
+            </div> <!-- Semana -->
+
+            <a [routerLink]="['entregas-pendientes']">Ver entregas pendientes</a>
+
+        </div> <!-- pedidos -->      
+    </aside>
+    <main class="centro">
+
+    </main>
+    <aside class="columna">
+        <div class="ventas card">
+            <h3 class="text-center">Resumen de Ventas</h3>
+            <!-- <p class="actualizacion text-right">Última actualizacion: <span>14/10/20 18:58:26</span></p> -->
+            <div class="texto">
+                <p>Periodo</p>
+                <p>ganancia</p>
+            </div>
+            <div class="elemento">
+                <p>Hoy</p>
+                <p>$0</p>
+            </div>
+            <div class="elemento">
+                <p>Semana</p>
+                <p>$200</p>
+            </div>
+            <div class="elemento">
+                <p>Mes</p>
+                <p>$200</p>
+            </div>
+        </div>
+    </aside>
+</div>

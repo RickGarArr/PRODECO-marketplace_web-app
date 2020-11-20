@@ -1,0 +1,33 @@
+<nav class="navbar">
+    <div class="contenedor">
+        
+        <div class="barra1">
+            <div class="logo">
+                <h2>Marketplace</h2>
+            </div>
+            <div class="derecha">
+                <a [routerLink]="['perfil']">Mi Perfil</a>
+                <a href="**">Mensajes</a>
+                <a href="**">Notificaciones</a>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <a routerLinkActive="active" [routerLink]="['home']">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a [routerLink]="['entregas-pendientes']">
+                <i class="fas fa-box-open"></i> Entregas Pendientes
+            </a>
+            <a [routerLink]="['ventas']">
+                <i class="fas fa-money-check-alt"></i> Ventas
+            </a>
+            <a [routerLink]="['mis-productos']">
+                <i class="fas fa-book"></i> Mis Productos
+            </a>
+            <a [routerLink]="['mi-informacion']">
+                <i class="fas fa-id-card"></i> Mi Información
+            </a>
+        </nav>
+    </div>
+  </nav>

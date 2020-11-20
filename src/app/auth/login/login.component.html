@@ -1,0 +1,48 @@
+<div class="site-header">
+    <div class="contenido-header contenedor">
+        <div class="barra">
+            <div class="logo">
+                <h2>MarketPLace</h2>
+            </div>
+            <div class="nav">
+                <nav>
+                    <a [routerLink]="['/sign-up']">Sign Up</a>
+                    <a [routerLink]="['/nosotros']">Sobre Nosotros</a>
+                </nav>
+            </div>    
+        </div>
+        <div class="texto">
+            <h3>Bienvenido A Marketplace</h3>
+            <p>Puedes vender tus productos de una forma mas eficeinte</p>
+        </div>
+    </div>
+</div>
+
+<section class="container">
+    <div class="login-card">
+        <h2 class="mb-2">Inicia Seción</h2>
+        <form>
+            
+            <label class="mb-1" for="correo">Correo Electronico</label>
+            <input class="form-input" type="email" required id="correo">
+            
+            <label class="mb-1" for="contrasenia">Contraseña</label>
+            <input class="form-input" type="password" required id="contrasenia">
+            
+            <div class="recordar">
+                <input type="checkbox" id="recordar">
+                <label class="inline-block" for="recordar">Recordarme</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" [routerLink]="['/home']">Iniciar Seción</button>
+            <small>Si aún no tienes una cuenta, <a [routerLink]="['/sign-up']">Registrate</a> ahora</small>
+
+        </form>
+        </div>
+</section>
+
+<footer>
+    <div class="footer">
+        <p>Marketplace {{ anio }} &copy;</p>
+    </div>
+</footer>

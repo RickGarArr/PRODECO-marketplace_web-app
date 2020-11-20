@@ -1,0 +1,26 @@
+<div class="contenedor fast fadeIn">
+    <h2 class="mtb-2">Mis Ventas</h2>
+    <table class="tabla">
+        <thead class="thead-dark">
+            <tr>
+                <th>Cliente</th>
+                <th>Sucursal</th>
+                <th>Ganancia</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of [1,1,1,1,1]">
+                <td>Ricardo Garcia</td>
+                <td>20 de Noviembre</td>
+                <td>$460</td>
+                <td>12-Nov-2020</td>
+                <td>12:35</td>
+                <td><a [routerLink]="['venta', '214']">Ver Más</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
