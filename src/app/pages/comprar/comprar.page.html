@@ -1,0 +1,40 @@
+<app-header titulo=""></app-header>
+
+<ion-content class="ion-padding-horizontal">
+
+  <div *ngIf="direccionesService.direcciones.length === 0" class="sin-direcciones">
+    <h4>Aún no has registrado ningúna dirección</h4>
+    <p>Registra una dirección para recibir tus productos a casa</p>
+  </div>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="direccionSelected" (ionChange)="showComponent = true">
+      <ion-item *ngFor="let direccion of direccionesService.direcciones">
+        <ion-label>
+            <h2>Calle: {{direccion.domicilio.calle}} {{direccion.domicilio.numExt}}</h2>
+            <p>Entre: {{direccion.domicilio.entreCalle1}} y {{direccion.domicilio.entreCalle1}}, 
+              {{direccion.domicilio.colonia}}, {{direccion.domicilio.cp}}</p>
+            <p>Contacto: {{direccion.contacto.nombre}} {{direccion.contacto.apellido}} - {{direccion.contacto.telefono}}</p>
+        </ion-label>
+        <ion-radio [value]=direccion slot="end"></ion-radio>
+    </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="full" fill="clear" (click)="registrarDireccion('crear')">Nueva Direccion</ion-button>
+</ion-content>
+
+<ion-footer>
+  <ion-item *ngIf="showComponent" detail (click)="modalResumen('domicilio', direccionSelected)">
+    <ion-icon name="home" slot="start"></ion-icon>
+    <ion-label>
+      Entrega a Domicilio
+    </ion-label>
+  </ion-item>
+  <ion-item detail (click)="modalResumen('sucursal')">
+    <ion-icon name="storefront" slot="start"></ion-icon>
+    <ion-label>
+      Retirar en Sucursal
+    </ion-label>
+  </ion-item>
+</ion-footer>

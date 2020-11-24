@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavController, PopoverController } from '@ionic/angular';
-import { ComprarComponent } from 'src/app/componentes/comprar/comprar.component';
-import { PopOverComponent } from './pop-over/pop-over.component';
+import { ModalController, PopoverController } from '@ionic/angular';
+import { PopOverComponent } from 'src/app/componentes/pop-over/pop-over.component';
 
 @Component({
   selector: 'app-carrito',
@@ -14,8 +13,7 @@ export class CarritoPage implements OnInit {
 
   constructor(
     private modalCtrl: ModalController,
-    private popoverCtrl: PopoverController,
-    private navCtrl: NavController) {
+    private popoverCtrl: PopoverController) {
       this.productos = false;
     }
 
@@ -25,19 +23,13 @@ export class CarritoPage implements OnInit {
   async popOpciones(event) {
     const pop = await this.popoverCtrl.create({
       component: PopOverComponent,
+      componentProps: {
+        type: 'opciones-producto'
+      },
+      id: 'popover',
       event,
     });
 
     pop.present();
   }
-
-  async comprar() {
-    const comprar = await this.modalCtrl.create({
-      component: ComprarComponent,
-      id: 'comprar'
-    });
-
-    comprar.present();
-  }
-
 }

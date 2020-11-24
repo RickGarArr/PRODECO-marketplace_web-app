@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, PopoverController } from '@ionic/angular';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Direccion } from '../../../../interfaces/interfaces';
+import { Direccion } from '../../interfaces/interfaces';
 import { DireccionesService } from 'src/app/services/direcciones.service';
-import { PopoverOpcionesComponent } from '../popover-opciones/popover-opciones.component';
+import { PopOverComponent } from 'src/app/componentes/pop-over/pop-over.component';
 
 @Component({
   selector: 'app-direccion',
@@ -54,9 +54,12 @@ export class DireccionComponent implements OnInit {
 
   async mostrarOpciones(event: Event) {
     const popoverOpciones = await this.popoverCtrl.create({
-      component: PopoverOpcionesComponent,
-      id: 'opciones',
-      event
+      component: PopOverComponent,
+      componentProps: {
+        type: 'opciones-direcciones'
+      },
+      id: 'popover',
+      event,
     });
 
     popoverOpciones.present();
@@ -69,9 +72,6 @@ export class DireccionComponent implements OnInit {
       case 'eliminar':
         this.eliminarDireccion();
         break;
-      case 'principal':
-        this.direccionesService.definirPrincipal(this.index);
-        this.cerrarModal();
     }
   }
 

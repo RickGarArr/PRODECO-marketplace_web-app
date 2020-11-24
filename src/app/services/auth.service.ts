@@ -33,9 +33,7 @@ export class AuthService {
     async verificarUsuario() {
         const usuario = await this.storage.get('usuario');
         if (usuario) {
-            this.registrado = true;
-        } else {
-            this.registrado = false;
+            this.registrado = usuario;
         }
     }
 }

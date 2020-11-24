@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Resumen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item color="light">
+      <ion-title *ngIf="direccion">Recive</ion-title>
+      <ion-title *ngIf="!direccion">Retira</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-padding-horizontal">
+        <h2>Contacto: {{contacto.nombre}} {{contacto.apellido}}</h2>
+        <p>Telefono: {{contacto.telefono}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

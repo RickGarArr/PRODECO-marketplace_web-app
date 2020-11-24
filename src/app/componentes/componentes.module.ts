@@ -4,37 +4,30 @@ import { MenuComponent } from './menu/menu.component';
 import { IonicModule } from '@ionic/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ModalSignComponent } from './modal-sign/modal-sign.component';
 import { ModalBuscarComponent } from '../componentes/modal-buscar/modal-buscar.component';
-import { ModalRegistroComponent } from './modal-sign/modal-registro/modal-registro.component';
-import { VerificarCorreoComponent } from './modal-sign/modal-registro/verificar-correo/verificar-correo.component';
-import { ModalLoginComponent } from './modal-sign/modal-login/modal-login.component';
 import { HeaderComponent } from './header/header.component';
-import { ComprarComponent } from './comprar/comprar.component';
-import { DireccionesComponent } from './comprar/direcciones/direcciones.component';
 
+import { ModalSignModule } from './modal-sign/modal-sign.module';
+import { PopOverComponent } from './pop-over/pop-over.component';
+import { DireccionComponent } from './direccion/direccion.component';
 
 @NgModule({
   declarations: [
     MenuComponent,
-    ModalSignComponent,
     ModalBuscarComponent,
-    ModalLoginComponent,
-    ModalRegistroComponent,
-    VerificarCorreoComponent,
     HeaderComponent,
-    ComprarComponent,
-    DireccionesComponent
+    PopOverComponent,
+    DireccionComponent
   ],
   imports: [
     CommonModule,
     IonicModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalSignModule
   ],
   exports: [
     MenuComponent,
     HeaderComponent,
-    ComprarComponent
   ]
 })
 export class ComponentesModule { }

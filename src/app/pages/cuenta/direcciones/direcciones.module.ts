@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { ComponentesModule } from 'src/app/componentes/componentes.module';
 import { IonicModule } from '@ionic/angular';
 
 import { DireccionesPageRoutingModule } from './direcciones-routing.module';
 
 import { DireccionesPage } from './direcciones.page';
 import { CuentaComponentesModule } from '../componentes/cuenta-componentes.module';
-import { DireccionComponent } from './direccion/direccion.component';
 
 @NgModule({
   imports: [
@@ -17,11 +16,11 @@ import { DireccionComponent } from './direccion/direccion.component';
     IonicModule,
     ReactiveFormsModule,
     DireccionesPageRoutingModule,
-    CuentaComponentesModule
+    CuentaComponentesModule,
+    ComponentesModule
   ],
   declarations: [
-    DireccionesPage,
-    DireccionComponent
+    DireccionesPage
   ]
 })
 export class DireccionesPageModule {}

@@ -14,7 +14,6 @@ export class DireccionesService {
     }
 
     async guardarDireccion(direccion: Direccion) {
-        direccion.principal = false;
         this.direcciones.unshift( direccion );
         this.storage.set('direcciones', this.direcciones );
     }
@@ -36,14 +35,4 @@ export class DireccionesService {
         this.storage.set('direcciones', this.direcciones);
     }
 
-    async definirPrincipal( index: number ){
-        this.direcciones.forEach((direccion) => {
-            if (direccion.principal === true) {
-                direccion.principal = false;
-            }
-        });
-        this.direcciones[index].principal=true;
-        this.storage.set('direcciones', this.direcciones);
-        console.log(this.direcciones);
-    }
 }

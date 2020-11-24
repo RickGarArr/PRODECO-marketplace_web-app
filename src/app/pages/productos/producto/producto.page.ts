@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, LoadingController, ModalController, NavController } from '@ionic/angular';
-import { ComprarComponent } from 'src/app/componentes/comprar/comprar.component';
  
 @Component({
   selector: 'app-producto',
@@ -12,7 +11,6 @@ export class ProductoPage implements OnInit {
   icono: boolean;
   icon: string;
   constructor(
-    private modalCtrl: ModalController,
     private loadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     private navCtrl: NavController) {
@@ -23,26 +21,8 @@ export class ProductoPage implements OnInit {
   ngOnInit() {
   } 
 
-  favorito() {
-    this.icono ? this.icono = false : this.icono = true;
-    if (this.icono === false ) {
-      this.icon = 'heart-outline';
-    } else {
-      this.icon = 'heart';
-    }
-  }
-
   navegar(page: string) {
     this.navCtrl.navigateForward(page);
-  }
-
-  async Comprar() {
-    const comprar = await this.modalCtrl.create({
-      component: ComprarComponent,
-      id: 'comprar',
-    });
-
-    await comprar.present();
   }
 
   async agregarAlCarrito() {
@@ -78,7 +58,7 @@ export class ProductoPage implements OnInit {
       setTimeout(() => {
         loading.dismiss();
         alert.present();
-      }, 1500);
+      }, 750);
     }).catch( e => console.log(e));
 
 
