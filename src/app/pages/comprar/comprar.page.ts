@@ -32,11 +32,13 @@ export class ComprarPage implements OnInit {
     await agregar.present();
   }
 
-  async modalResumen( id: string , direccion?: Direccion) {
+  async modalResumen( opcionEntrega: string, direccion?: Direccion) {
     const resumen = await this.modalCtrl.create({
       component: ResumenComponent,
-      id,
-      componentProps: {direccion}
+      componentProps: {
+        direccion,
+        opcionEntrega
+      }
     });
   resumen.present();
   }

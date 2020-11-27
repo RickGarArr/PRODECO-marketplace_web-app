@@ -13,7 +13,7 @@ import { PopOverComponent } from 'src/app/componentes/pop-over/pop-over.componen
 export class DireccionComponent implements OnInit {
 
   @Input() direccion: Direccion = null;
-  @Input() index: number = -1;
+  @Input() index: number;
   
   direccionForm: FormGroup;
   operacion: string;

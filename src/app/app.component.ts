@@ -34,7 +34,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.dlService.omitirModalSign().then( data => {
-        // console.log(data);
+        console.log(data);
         if (data === null || data !== true) {
           this.abrirModalSign();
         }

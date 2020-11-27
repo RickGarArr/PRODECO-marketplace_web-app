@@ -12,8 +12,13 @@
 <ion-content>
   <ion-list>
     <ion-item color="light">
-      <ion-title *ngIf="direccion">Recive</ion-title>
-      <ion-title *ngIf="!direccion">Retira</ion-title>
+      <ion-title *ngIf="opcionEntrega === 'domicilio'">Recive</ion-title>
+      <ion-title *ngIf="opcionEntrega === 'sucursal'">Retira</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="popoverOpciones($event)">
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-item>
     <ion-item>
       <ion-label class="ion-padding-horizontal">
@@ -21,5 +26,44 @@
         <p>Telefono: {{contacto.telefono}}</p>
       </ion-label>
     </ion-item>
+    <ion-item color="light">
+      <ion-title>Dirección</ion-title>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-padding-horizontal">
+        <h2>Calle: {{ domicilio.calle }} {{ domicilio.numExt }}</h2>
+        <p>Entre: {{domicilio.entreCalle1}} y {{domicilio.entreCalle2}}</p>
+        <p>Colonia: {{domicilio.colonia}}, CP: {{ domicilio.cp }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-title>Productos</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="assets/img/ofertas/01.webp"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h4>Realme 8 Pro Dual SIM, 128 GB, 8GB RAM, Azul Rayo</h4>
+        <h2>$6450</h2>
+        <p>Tienda: <span>Ricardo Garcia</span></p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item color="light">
+      <ion-title>Total</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>3255 pesos</h2>
+      </ion-label>
+    </ion-item>
+
   </ion-list>
+  <ion-button (click)="comprar()" color="primary" expand="full" class="btn-compra ion-margin">
+    Realizar Compra
+  </ion-button>
 </ion-content>

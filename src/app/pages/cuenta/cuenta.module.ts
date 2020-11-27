@@ -11,7 +11,7 @@ import { ComponentesModule } from 'src/app/componentes/componentes.module';
 
 @NgModule({
   providers: [
-    CuentaComponentesModule,
+    // CuentaComponentesModule,
     // { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   imports: [

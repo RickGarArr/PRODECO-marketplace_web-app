@@ -27,13 +27,13 @@ export interface Direccion {
     principal: boolean;
 }
 
-interface Contacto {
+export interface Contacto {
     apellido: string;
     nombre: string;
     telefono: string;
 }
 
-interface Domicilio {
+export interface Domicilio {
     calle: string;
     colonia: string;
     cp: string;

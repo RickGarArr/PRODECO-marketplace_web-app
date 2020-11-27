@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController, PopoverController } from '@ionic/angular';
 import { PopOverComponent } from 'src/app/componentes/pop-over/pop-over.component';
 
@@ -12,6 +13,7 @@ export class CarritoPage implements OnInit {
   productos: boolean;
 
   constructor(
+    private router: Router,
     private modalCtrl: ModalController,
     private popoverCtrl: PopoverController) {
       this.productos = false;
@@ -31,5 +33,9 @@ export class CarritoPage implements OnInit {
     });
 
     pop.present();
+  }
+
+  navegar(ruta: string) {
+    this.router.navigateByUrl('comprar');
   }
 }

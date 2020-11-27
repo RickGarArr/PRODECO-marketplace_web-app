@@ -22,3 +22,9 @@
     </ion-label>
   </ion-item>
 </ion-list>
+
+<ion-item *ngIf="type === 'opciones-destinatario'" (click)="opcion('editar')">
+  <ion-label>
+    Editar
+  </ion-label>
+</ion-item>

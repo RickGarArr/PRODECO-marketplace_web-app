@@ -5,13 +5,15 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { OfertasComponent } from './ofertas/ofertas.component';
 import { ScrollCardsComponent } from './scroll-cards/scroll-cards.component';
 import { SlideAnunciosComponent } from './slide-anuncios/slide-anuncios.component';
+import { NoSesionComponent } from './no-sesion/no-sesion.component';
 
 @NgModule({
   declarations: [
     CategoriasComponent,
     OfertasComponent,
     ScrollCardsComponent,
-    SlideAnunciosComponent
+    SlideAnunciosComponent,
+    NoSesionComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { SlideAnunciosComponent } from './slide-anuncios/slide-anuncios.componen
     CategoriasComponent,
     OfertasComponent,
     ScrollCardsComponent,
-    SlideAnunciosComponent
+    SlideAnunciosComponent,
+    NoSesionComponent
   ]
 })
 export class HomeComponentsModule { }
