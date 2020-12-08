@@ -7,13 +7,15 @@ import { ComercioComponent } from './comercio/comercio.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { ConsumidorComponent } from './consumidor/consumidor.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
+import { UpBarComponent } from './header/upbar.component';
 
 @NgModule({
   declarations: [
     ComercioComponent,
     SearchbarComponent,
     ConsumidorComponent,
-    SolicitudComponent
+    SolicitudComponent,
+    UpBarComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { SolicitudComponent } from './solicitud/solicitud.component';
     ComercioComponent,
     SearchbarComponent,
     ConsumidorComponent,
-    SolicitudComponent
+    SolicitudComponent,
+    UpBarComponent
   ]
 })
 export class ComponentsModule { }

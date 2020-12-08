@@ -1,1 +1,24 @@
-<p>consumidor works!</p>
+<div class="card mt">
+    <div class="campo nombre">
+        <p>Ricardo Garcia</p>
+    </div>
+    <div class="campo compras">
+        <a href="/">214</a>
+    </div>
+    <div class="campo ganancia">
+        <p>2000</p>
+    </div>
+    <div class="campo estado">
+        <label class="switch">
+            <input type="checkbox" [formControl]="estado" (change)="cambiarEstado()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="campo productos">
+        <a href="/">34</a>
+    </div>
+    <div class="campo opciones">
+        <button type="button" class="btn mr">Ver Perfil</button>
+        <button type="button" class="btn">Mensajes</button>
+    </div>
+</div>

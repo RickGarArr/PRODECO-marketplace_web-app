@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-consumidor',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsumidorComponent implements OnInit {
 
+  public estado = new FormControl(true);
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambiarEstado() { 
   }
 
 }

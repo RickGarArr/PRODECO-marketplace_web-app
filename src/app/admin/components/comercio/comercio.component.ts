@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-comercio',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComercioComponent implements OnInit {
 
+  public estado = new FormControl(true);
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambio() {
+    console.log(this.estado.value);
   }
 
 }
