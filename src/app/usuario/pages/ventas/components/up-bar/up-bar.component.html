@@ -1,0 +1,42 @@
+<div class="card up-bar">
+    <div class="izquierda">
+        <select class="form-input" [formControl]="filtro">
+            <option value="tiempo">Tiempo</option>
+            <option value="cliente">Cliente</option>
+        </select>
+
+        <select *ngIf="filtro.value === 'tiempo'" class="form-input ml">
+            <option value="hoy">Hoy</option>
+            <option value="semana">En Esta Semana</option>
+            <option value="mes">En El Mes</option>
+        </select>
+
+        <select *ngIf="filtro.value === 'cliente'" class="form-input ml">
+            <option value="ricardo">Ricardo Garcia</option>
+        </select>
+    </div>
+    <div class="derecha">
+        <input type="text" name="search" id="search" class="form-input">
+        <button type="button" class="btn ml">Buscar</button>
+    </div>
+</div>
+<div class="card header-ventas mt">
+    <div class="campo">
+        <p>ID</p>
+    </div>
+    <div class="campo">
+        <p>Cliente</p>
+    </div>
+    <div class="campo">
+        <p>Ganancia</p>
+    </div>
+    <div class="campo">
+        <p>Fecha</p>
+    </div>
+    <div class="campo">
+        <p>Hora</p>
+    </div>
+    <div class="campo">
+        <p>Detalles</p>
+    </div>
+</div>

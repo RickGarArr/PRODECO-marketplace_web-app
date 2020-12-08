@@ -1,0 +1,26 @@
+<div class="contenedor fadeIn fast mb-2">
+    <app-searchbar origen="comercios"></app-searchbar>
+
+    <div class="heder-card card mt">
+        <div class="campo">
+            <p>Nombre</p>
+        </div>
+        <div class="campo">
+            <p>Ventas</p>
+        </div>
+        <div class="campo">
+            <p>Ganancia</p>
+        </div>
+        <div class="campo">
+            <p>Estado</p>
+        </div>
+        <div class="campo">
+            <p>Productos</p>
+        </div>
+        <div class="campo">
+            <p>Opciones</p>
+        </div>
+    </div>
+
+    <app-comercio *ngFor="let i of [1,2,3,4,5,6,7,8]"></app-comercio>
+</div>

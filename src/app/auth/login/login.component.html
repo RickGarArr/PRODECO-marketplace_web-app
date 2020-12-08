@@ -1,4 +1,4 @@
-<div class="site-header">
+<header class="site-header">
     <div class="contenido-header contenedor">
         <div class="barra">
             <div class="logo">
@@ -6,8 +6,7 @@
             </div>
             <div class="nav">
                 <nav>
-                    <a [routerLink]="['/sign-up']">Sign Up</a>
-                    <a [routerLink]="['/nosotros']">Sobre Nosotros</a>
+                    <a routerLink="/register">Registrarme</a>
                 </nav>
             </div>    
         </div>
@@ -16,26 +15,28 @@
             <p>Puedes vender tus productos de una forma mas eficeinte</p>
         </div>
     </div>
-</div>
+</header>
 
 <section class="container">
     <div class="login-card">
         <h2 class="mb-2">Inicia Seción</h2>
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
             
             <label class="mb-1" for="correo">Correo Electronico</label>
-            <input class="form-input" type="email" required id="correo">
+            <input class="form-input" type="email" formControlName="email" id="correo">
+            <small class="small-error" *ngIf="isInvalid('email')">El correo electronico es necesario</small>
             
             <label class="mb-1" for="contrasenia">Contraseña</label>
-            <input class="form-input" type="password" required id="contrasenia">
+            <input class="form-input" type="password" formControlName="password" id="contrasenia">
+            <small class="small-error" *ngIf="isInvalid('password')">El password es necesario</small>
             
             <div class="recordar">
-                <input type="checkbox" id="recordar">
+                <input type="checkbox" formControlName="recordar" id="recordar">
                 <label class="inline-block" for="recordar">Recordarme</label>
             </div>
             
-            <button type="submit" class="btn btn-primary" [routerLink]="['/home']">Iniciar Seción</button>
-            <small>Si aún no tienes una cuenta, <a [routerLink]="['/sign-up']">Registrate</a> ahora</small>
+            <button type="submit" class="btn btn-primary">Iniciar Seción</button>
+            <small>Si aún no tienes una cuenta, <a routerLink="/register">Registrate</a> ahora</small>
 
         </form>
         </div>

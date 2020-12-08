@@ -1,0 +1,23 @@
+.producto {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+    text-align: center;
+}
+
+.body-campo {
+    align-self: center;
+
+}
+
+.imagen img {
+    width: 25px;
+}
+
+.opciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.opciones > :nth-child(n) {
+    flex-basis: 30%;
+}

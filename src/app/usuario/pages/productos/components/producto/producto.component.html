@@ -1,0 +1,30 @@
+<div class="producto mt">
+    <div class="body-campo imagen">
+        <img src="assets/img/producto-01.jpg" alt="producto 1">
+    </div>
+    <div class="body-campo nombre">
+        <p>Mouse Gamer X</p>
+    </div>
+    <div class="body-campo disponible flex">
+        <input type="number" class="w-100 ml" [formControl]="stock">
+        <button class="btn ml mr" (click)="editarStock()"> <i class="fa fa-edit"></i></button>
+    </div>
+    <div class="body-campo precio flex">
+        <input type="number" class="w-100 ml" [formControl]="precio">
+        <button class="btn ml" (click)="editarPrecio()"> <i class="fa fa-edit"></i></button>
+    </div>
+    <div class="body-campo estado">
+        <p>activo</p>
+    </div>
+    <div class="body-campo opciones">
+        <button type="button" class="btn" [routerLink]="['producto']">
+            <i class="fa fa-edit"></i>
+        </button>
+        <button type="button" class="btn" (click)="desactivarProucto()">
+            <i class="fa fa-toggle-on"></i>
+        </button>
+        <button type="button" class="btn" (click)="borrarProducto()">
+            <i class="fa fa-trash-alt"></i>
+        </button>
+    </div>
+</div>

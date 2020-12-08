@@ -1,32 +1,53 @@
 <nav class="navbar">
-    <div class="contenedor">
-        
+    <div *ngIf="origen === 'usuario'" class="contenedor-nav">
+        <div class="barra1">
+            <div class="logo">
+                <h2>Marketplace {{titulo}}</h2>
+            </div>
+            <div class="derecha">
+                <a routerLink="perfil">Mi Perfil</a>
+                <a href="**">Mensajes</a>
+                <a href="**">Notificaciones</a>
+            </div>
+        </div>
+        <nav class="nav">
+            <a routerLinkActive="active" routerLink="/">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a routerLinkActive="active" routerLink="pedidos">
+                <i class="fas fa-box-open"></i> Pedidos
+            </a>
+            <a routerLinkActive="active" routerLink="ventas">
+                <i class="fas fa-money-check-alt"></i> Ventas
+            </a>
+            <a routerLinkActive="active" routerLink="productos">
+                <i class="fas fa-book"></i> Productos
+            </a>
+        </nav>
+    </div>
+
+    <div *ngIf="origen === 'admin'" class="contenedor-nav">
         <div class="barra1">
             <div class="logo">
                 <h2>Marketplace</h2>
             </div>
             <div class="derecha">
-                <a [routerLink]="['perfil']">Mi Perfil</a>
                 <a href="**">Mensajes</a>
                 <a href="**">Notificaciones</a>
             </div>
         </div>
-
         <nav class="nav">
-            <a routerLinkActive="active" [routerLink]="['home']">
+            <a routerLinkActive="active" routerLink="/admin">
                 <i class="fas fa-home"></i> Home
             </a>
-            <a [routerLink]="['entregas-pendientes']">
-                <i class="fas fa-box-open"></i> Entregas Pendientes
+            <a routerLinkActive="active" routerLink="comercios">
+                <i class="fas fa-box-open"></i> Comercios
             </a>
-            <a [routerLink]="['ventas']">
-                <i class="fas fa-money-check-alt"></i> Ventas
+            <a routerLinkActive="active" routerLink="consumidores">
+                <i class="fas fa-money-check-alt"></i> Consumidores
             </a>
-            <a [routerLink]="['mis-productos']">
-                <i class="fas fa-book"></i> Mis Productos
-            </a>
-            <a [routerLink]="['mi-informacion']">
-                <i class="fas fa-id-card"></i> Mi Información
+            <a routerLinkActive="active" routerLink="solicitudes">
+                <i class="fas fa-money-check-alt"></i> Solicitudes
             </a>
         </nav>
     </div>

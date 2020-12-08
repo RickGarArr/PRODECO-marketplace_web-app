@@ -1,0 +1,14 @@
+.up-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-pedidos {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr 2fr 2fr 1fr;
+    align-items: center;
+}
+
+.campo {
+    text-align: center;
+}

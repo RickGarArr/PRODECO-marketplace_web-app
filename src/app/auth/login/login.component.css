@@ -121,6 +121,9 @@ button.btn {
     margin-bottom: 1rem;
 }
 
+samall.small-error {
+    color: red;
+}
 .recordar {
     display: flex;
     justify-content: space-evenly;
@@ -136,8 +139,10 @@ footer .footer p {
     background-color: #212529;
     margin: 0;
     color: white;
+    position: relative;
+    bottom: 0;
 }
 
 .btn {
     padding: 1rem 2rem;
-  }
+}
