@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ComercioComponent } from './comercio/comercio.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { ComercioComponent } from './comercio/comercio.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { ConsumidorComponent } from './consumidor/consumidor.component';
+import { SolicitudComponent } from './solicitud/solicitud.component';
 
 @NgModule({
   declarations: [
     ComercioComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    ConsumidorComponent,
+    SolicitudComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +22,9 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
   ],
   exports: [
     ComercioComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    ConsumidorComponent,
+    SolicitudComponent
   ]
 })
 export class ComponentsModule { }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BrowserStack } from 'protractor/built/driverProviders';
 
 @Component({
   selector: 'app-searchbar',
@@ -8,10 +9,21 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SearchbarComponent implements OnInit {
 
   @Input() origen: string;
+  public filtros: string[] = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+    switch (this.origen) {
+      case 'solicitudes':
+        this.filtros = ['todas', 'rechazadas', 'aprovadas'];
+      break;
+      case 'consumidores':
+      case 'comercios':
+        this.filtros = ['todos', 'activos', 'desactivados'];
+      break;
+    }
   }
 
 }

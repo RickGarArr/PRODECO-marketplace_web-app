@@ -1,9 +1,7 @@
 <div class="card flex space-between mt-2">
     <div class="izquierda">
-        <select class="form-input ml" name="estado" id="estado">
-            <option value="todos">Todos</option>
-            <option value="activo">Activo</option>
-            <option value="desactivo">Desactivo</option>
+        <select class="form-input ml">
+            <option *ngFor="let filtro of filtros" [value]="filtro">{{ filtro | titlecase }}</option>
         </select>
     </div>
     <div class="derecha">
