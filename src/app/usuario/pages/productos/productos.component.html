@@ -1,4 +1,5 @@
 <div class="contenedor fadeIn fast mt-2 mb-2">
-    <app-up-bar></app-up-bar>
-    <producto-component *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]"></producto-component>
+    <component-searchbar [origen]="origen"></component-searchbar>
+    <component-upbar [origen]="origen"></component-upbar>
+    <component-producto *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]"></component-producto>
 </div>

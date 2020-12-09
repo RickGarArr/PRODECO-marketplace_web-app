@@ -19,8 +19,11 @@ const routes: Routes = [
   // AuthRoutingModule
   // 'login' 'register'
 
-  // UsuarioRoutingModule
+  // UsuarioRoutingModule usuario/
   // 'ventas' 'pedidos' 'productos' 'perfil'
+
+  // AdminRoutingModule admin/
+  // 'admin
 ];
 
 @NgModule({

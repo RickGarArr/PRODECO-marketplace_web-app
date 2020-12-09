@@ -1,0 +1,10 @@
+.pedido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.campo {
+    text-align: center;
+    align-self: center;
+}

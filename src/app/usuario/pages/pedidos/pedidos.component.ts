@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 })
 export class PedidosComponent implements OnInit {
 
-  public filtro = new FormControl('tiempo');
+  public origen: string = 'pedidos';
 
   constructor() {
     

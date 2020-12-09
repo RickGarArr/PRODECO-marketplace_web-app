@@ -8,7 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   @Input() origen: string;
-  @Input() titulo: string;
 
   constructor() { }
 

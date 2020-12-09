@@ -4,14 +4,16 @@ import { ComerciosComponent } from './comercios/comercios.component';
 import { ConsumidoresComponent } from './consumidores/consumidores.component';
 import { AdminDashboardComponent } from './dashboard/dashboard.component';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
-import { ComponentsModule } from 'src/app/admin/components/components.module';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { SolicitudComponent } from './solicitud/solicitud.component';
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     ComerciosComponent,
     ConsumidoresComponent,
-    SolicitudesComponent
+    SolicitudesComponent,
+    SolicitudComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { ComponentsModule } from 'src/app/admin/components/components.module';
     AdminDashboardComponent,
     ComerciosComponent,
     ConsumidoresComponent,
-    SolicitudesComponent
+    SolicitudesComponent,
+    SolicitudComponent
   ]
 })
 export class PagesModule { }

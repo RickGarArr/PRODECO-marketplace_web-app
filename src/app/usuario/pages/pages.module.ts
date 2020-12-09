@@ -4,39 +4,44 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 
-import { ProductosModule } from './productos/productos.module';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProductoComponent } from './producto/producto.component';
 import { VentaComponent } from './venta/venta.component';
-import { VentasModule } from './ventas/ventas.module';
-import { PedidosModule } from './pedidos/pedidos.module';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { ProductosComponent } from './productos/productos.component';
+import { VentasComponent } from './ventas/ventas.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
     declarations: [
+        PerfilComponent,
         DashboardComponent,
         PedidoComponent,
-        PerfilComponent,
+        PedidosComponent,
         ProductoComponent,
-        VentaComponent
+        ProductosComponent,
+        VentaComponent,
+        VentasComponent
     ],
     imports: [
         CommonModule,
+        NgxDropzoneModule,
         ReactiveFormsModule,
         NgxDropzoneModule,
         RouterModule,
-        PedidosModule,
-        ProductosModule,
-        VentasModule
+        ComponentsModule
     ],
     exports: [
+        PerfilComponent,
         DashboardComponent,
         PedidoComponent,
-        PerfilComponent,
+        PedidosComponent,
         ProductoComponent,
-        VentaComponent
+        ProductosComponent,
+        VentaComponent,
+        VentasComponent
     ]
 })
 export class PagesModule {}

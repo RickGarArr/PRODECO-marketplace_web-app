@@ -4,9 +4,7 @@ import { PagesModule } from './pages/pages.module';
 import { AdminComponent } from './admin.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { ComponentsModule } from './components/components.module';
-
-
+import { UsuarioModule } from '../usuario/usuario.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +15,7 @@ import { ComponentsModule } from './components/components.module';
     RouterModule,
     PagesModule,
     SharedModule,
-    ComponentsModule
+    UsuarioModule
   ]
 })
 export class AdminModule { }

@@ -8,6 +8,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class ProductosComponent {
 
+  public origen: string = 'productos';
   filtrosForm: FormGroup;
   
 

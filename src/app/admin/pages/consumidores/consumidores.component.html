@@ -1,6 +1,6 @@
 <div class="contenedor fadeIn fast mb-2">
-    <app-searchbar origen="consumidores"></app-searchbar>
-    <app-upbar origen="consumidores"></app-upbar>
-    <app-consumidor *ngFor="let comercio of [1,2,3,4,5,6,7,8,9]"></app-consumidor>
+    <component-searchbar [origen]="origen"></component-searchbar>
+    <component-upbar [origen]="origen"></component-upbar>
+    <component-consumidor *ngFor="let comercio of [1,2,3,4,5,6,7,8,9]"></component-consumidor>
 </div>
 
