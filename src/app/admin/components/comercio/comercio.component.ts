@@ -38,7 +38,7 @@ export class ComercioComponent implements OnInit {
       this.cambioEstado();
       Swal.fire({
         title: 'Comercio Desactivado',
-        timer: 500
+        timer: 1500
       });  
     }});
   }
