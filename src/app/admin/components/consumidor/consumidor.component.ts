@@ -8,13 +8,27 @@ import Swal from 'sweetalert2'
 })
 export class ConsumidorComponent implements OnInit {
 
+ estado='activo'
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  desactivarConsumidor(){
+  cambioEstado(){
 
+    if(this.estado == 'activo'){
+      this.estado = 'desactivado'
+    }else {
+      if( this.estado == 'desactivado'){
+        this.estado = 'activo'
+      }
+    }
+  }
+
+  
+
+  desactivarConsumidor(){
     Swal.fire({
       title: 'Desactivar',
       text: "¿Desea Desactivar Este Consumidor?",
@@ -24,6 +38,7 @@ export class ConsumidorComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Continuar'
     }).then(data => { if (data.isConfirmed) {
+      this.cambioEstado();
       Swal.fire({
         title: 'Consumidor Desactivado',
         timer: 500

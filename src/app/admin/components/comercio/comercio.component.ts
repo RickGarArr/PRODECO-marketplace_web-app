@@ -7,10 +7,21 @@ import Swal from 'sweetalert2'
   styleUrls: ['./comercio.component.css']
 })
 export class ComercioComponent implements OnInit {
-
+ estado = 'activo';
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambioEstado(){
+
+    if(this.estado == 'activo'){
+      this.estado = 'desactivado'
+    }else {
+      if( this.estado == 'desactivado'){
+        this.estado = 'activo'
+      }
+    }
   }
 
 
@@ -24,6 +35,7 @@ export class ComercioComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Continuar'
     }).then(data => { if (data.isConfirmed) {
+      this.cambioEstado();
       Swal.fire({
         title: 'Comercio Desactivado',
         timer: 500
