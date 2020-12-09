@@ -5,6 +5,7 @@ import { AdminDashboardComponent } from './pages/dashboard/dashboard.component';
 import { ComerciosComponent } from './pages/comercios/comercios.component';
 import { ConsumidoresComponent } from './pages/consumidores/consumidores.component';
 import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component';
+import { EmpresaComponent } from './pages/empresa/empresa.component';
 
 const routes: Routes = [
     {
@@ -14,7 +15,8 @@ const routes: Routes = [
             { path: '', component: AdminDashboardComponent },
             { path: 'comercios', component: ComerciosComponent },
             { path: 'consumidores', component: ConsumidoresComponent },
-            { path: 'solicitudes', component: SolicitudesComponent }
+            { path: 'solicitudes', component: SolicitudesComponent },
+            { path: 'empresa', component: EmpresaComponent }
         ]
     }
 ];

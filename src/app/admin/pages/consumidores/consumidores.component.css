@@ -1,0 +1,12 @@
+.barra {
+    justify-content: space-between;
+}
+
+.campo {
+    text-align: center;
+}
+
+.heder-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+}

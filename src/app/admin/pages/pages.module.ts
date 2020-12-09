@@ -5,13 +5,15 @@ import { ConsumidoresComponent } from './consumidores/consumidores.component';
 import { AdminDashboardComponent } from './dashboard/dashboard.component';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { ComponentsModule } from 'src/app/admin/components/components.module';
+import { EmpresaComponent } from './empresa/empresa.component';
 
 @NgModule({
   declarations: [
     AdminDashboardComponent,
     ComerciosComponent,
     ConsumidoresComponent,
-    SolicitudesComponent
+    SolicitudesComponent,
+    EmpresaComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { ComponentsModule } from 'src/app/admin/components/components.module';
     AdminDashboardComponent,
     ComerciosComponent,
     ConsumidoresComponent,
-    SolicitudesComponent
+    SolicitudesComponent,
+    EmpresaComponent
   ]
 })
 export class PagesModule { }
