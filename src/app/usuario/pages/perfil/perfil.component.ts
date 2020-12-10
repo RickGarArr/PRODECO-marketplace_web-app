@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Empresa } from 'src/app/interfaces/interfaces';
-import { DataService } from 'src/app/services/data.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-perfil',
@@ -9,83 +8,51 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  
-  form: FormGroup;
-  disabled = true;
-  datosEmpresa: Empresa;
 
-  constructor(
-    private data: DataService,
-    private formBuilder: FormBuilder) {
-      this.crearFormulario();
-    }
+  public fecha = moment().locale('es').format('h:mm:ss a, MMMM D YYYY');
+  public img;
+  public formPerfil: FormGroup;
+  public formInfo: FormGroup;
+  
+  constructor( private formBuilder: FormBuilder ) {
+    this.formPerfil = this.formBuilder.group({
+      nombre: new FormControl('Prodeco S.A. de C.V.', [Validators.required]),
+      telefono: new FormControl('677-106-6402', [Validators.required]),
+      email: new FormControl('prodeco@prodeco.com', [Validators.required, Validators.email]),
+      calle: new FormControl('Pereyra', [Validators.required]),
+      numero: new FormControl('317', [Validators.required]),
+      cp: new FormControl('34000', [Validators.required]),
+      colonia: new FormControl('Zona Centro', [Validators.required]),
+    });
+    this.formInfo = this.formBuilder.group({
+      rfc: new FormControl('GAAR7902156DS', [Validators.required]),
+      registro: new FormControl(this.fecha, [Validators.required])
+    });
+  }
 
   ngOnInit(): void {
-    this.data.getEmpresa().subscribe( datos => {
-      this.datosEmpresa = datos;
-      this.cargarFormulario();
-    });
+    this.formPerfil.disable();
   }
 
-  public get texto(): string {
-    return this.disabled ? 'Editar' : 'Cancelar';
+  guardar() {
+    console.log(this.formPerfil.value);
+    this.formPerfil.disable();
   }
 
-  crearFormulario(): void {
-    this.form = this.formBuilder.group({
-      nombreEmpresa: new FormControl({value: '', disabled: true}, [Validators.required]),
-      rfc: new FormControl({value: '', disabled: true}, [Validators.required]),
-      correo: new FormControl({value: '', disabled: true}, [Validators.required]),
-      telefono: new FormControl({value: '', disabled: true}, [Validators.required]),
-      domicilio: new FormGroup({
-        calle: new FormControl({value: '', disabled: true}, [Validators.required]),
-        numero: new FormControl({value: '', disabled: true}, [Validators.required]),
-        cp: new FormControl({value: '', disabled: true}, [Validators.required]),
-        colonia: new FormControl({value: '', disabled: true}, [Validators.required]),
-        ciudad: new FormControl({value: '', disabled: true}, [Validators.required])
-      })
-    });
+  editar() {
+    if (this.formPerfil.enabled) {
+      this.formPerfil.disable();
+    } else {
+      this.formPerfil.enable();
+      this.formPerfil.controls['nombre'].disable();
+    }
   }
 
-  cargarFormulario(): void {
-    const {
-      nombreEmpresa,
-      rfc,
-      correoPrincipal,
-      telefono,
-      domicilio
-    } = this.datosEmpresa;
-
-    this.form.reset({
-      nombreEmpresa: (nombreEmpresa),
-      rfc: (rfc),
-      correo: (correoPrincipal),
-      telefono: (telefono),
-      domicilio: ({
-        calle: (domicilio.calle),
-        numero: (domicilio.numero),
-        cp: (domicilio.cp),
-        colonia: (domicilio.colonia),
-        ciudad: (domicilio.ciudad)
-      }),
-    });
+  cambioImagen(event) {
+    this.img = event.addedFiles[0];
   }
 
-  onSubmit(): void {
-    console.log(this.form.value);
+  eliminarImg() {
+    this.img = undefined;
   }
-
-  activarEditar(): void {
-    Object.values(this.form.controls).forEach(control => {
-      if (control instanceof FormGroup) {
-        Object.values( control.controls ).forEach( ctrl => {
-          this.disabled ? ctrl.enable() : ctrl.disable();
-        });
-      } else {
-        this.disabled ? control.enable() : control.disable(), this.cargarFormulario();
-      }
-    });
-    this.disabled = !this.disabled;
-  }
-
 }
