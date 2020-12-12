@@ -19,8 +19,8 @@ export class UpBarComponent implements OnInit {
         this.gridTemplateColums = '2fr 1fr 1fr 1fr 1fr 2fr';
       break;
       case 'consumidores':
-        this.upBarCampos = ['Nombre', 'Compras', 'Gastado', 'Estado', 'Direcciones', 'Acciones'];
-        this.gridTemplateColums = '2fr 1fr 1fr 1fr 1fr 2fr';
+        this.upBarCampos = ['Nombre', 'Compras', 'Email', 'Telefono', 'Estado', 'Direcciones', 'Acciones'];
+        this.gridTemplateColums = '2fr 1fr 2fr 1fr 1fr 1fr 2fr';
       break;
       case 'solicitudes':
         this.upBarCampos = ['Fecha', 'Comercio', 'Solicitud', 'Estado', 'Acciones'];

@@ -1,0 +1,57 @@
+.site-header {
+    background-color: var(--dark);
+    height: 25vh;
+    position: relative;
+}
+
+.contenido-header {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contenido-header .barra {
+    flex: 0 0 calc(15% - 1rem);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.contenido-header .texto {
+    flex: 0 0 calc(85% - 1rem);
+    text-align: center;
+}
+
+.logo h2 {
+    text-transform: uppercase;
+    font-size: 3.2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+nav a:last-child {
+    margin-right: 0;
+}
+
+nav a:hover {
+    color: yellowgreen;
+}
+
+.texto h3, p {
+    color: white;
+}
+
+/* ..........................................................................
+    container
+.......................................................................... */
+.container {
+    min-height: 70vh;
+}

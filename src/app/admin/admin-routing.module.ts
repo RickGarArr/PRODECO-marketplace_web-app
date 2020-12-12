@@ -14,6 +14,8 @@ import { VentaComponent } from '../usuario/pages/venta/venta.component';
 import { ProductoComponent } from '../usuario/pages/producto/producto.component';
 import { PedidosComponent } from '../usuario/pages/pedidos/pedidos.component';
 import { PedidoComponent } from '../usuario/pages/pedido/pedido.component';
+import { PerfilComponent } from '../usuario/pages/perfil/perfil.component';
+import { MensajesComponent } from '../components/mensajes/mensajes.component';
 
 const routes: Routes = [
     {
@@ -31,6 +33,8 @@ const routes: Routes = [
             { path: 'comercios/comercio/ventas/venta', component: VentaComponent },
             { path: 'comercios/comercio/pedidos', component: PedidosComponent },
             { path: 'comercios/comercio/pedidos/pedido', component: PedidoComponent },
+            { path: 'comercios/comercio/perfil', component: PerfilComponent },
+            { path: 'mensajes', component: MensajesComponent },
         ]
     }
 ];

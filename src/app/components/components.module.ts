@@ -14,6 +14,7 @@ import { SolicitudComponent } from './solicitud/solicitud.component';
 import { UpBarComponent } from './upbar/upbar.component';
 import { VentaComponent } from './venta/venta.component';
 import { GraficaComponent } from './grafica/grafica.component';
+import { MensajesComponent } from './mensajes/mensajes.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GraficaComponent } from './grafica/grafica.component';
     SolicitudComponent,
     UpBarComponent,
     VentaComponent,
-    GraficaComponent
+    GraficaComponent,
+    MensajesComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +44,8 @@ import { GraficaComponent } from './grafica/grafica.component';
     SolicitudComponent,
     UpBarComponent,
     VentaComponent,
-    GraficaComponent
+    GraficaComponent,
+    MensajesComponent
   ]
 })
 export class ComponentsModule { }

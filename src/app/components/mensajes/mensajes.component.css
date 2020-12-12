@@ -1,0 +1,42 @@
+.card {
+    height: 75vh;
+}
+
+.chats {
+    border-right: 1px solid var(--dark-light);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.chat {
+    border-bottom: 1px solid var(--dark-light);
+}
+.chat:hover {
+    background-color: var(--dark-light);
+}
+
+.personas {
+    cursor: pointer;
+}
+
+.mensajes,
+.chats {
+    overflow: auto;
+    overflow-x: hidden;
+    height: 70vh;
+}
+
+.mensaje {
+    width: 80%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.recibido {
+    background-color: lightblue;
+}
+
+.enviado {
+    background-color: lightgreen;
+    margin-left: auto;
+}

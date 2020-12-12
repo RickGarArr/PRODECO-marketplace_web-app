@@ -1,181 +1,82 @@
 <div class="contenedor">
-  <div class="card mt-2">
-    <div class="izquierda">
-      <ngx-dropzone
-      *ngIf="!img"
-        [multiple]="false"
-        (change)="cambioImagen($event)"
-        class="principal"
-        accept="image/jpeg,image/jpg,image/png"
-        [multiple]="false">
+  <div class="card flex space-between mt-2">
+
+    <div class="izquierda col-4">
+      <ngx-dropzone *ngIf="!img" [multiple]="false" (change)="cambioImagen($event)" class="perfil mt-1"
+        accept="image/jpeg,image/jpg,image/png" [multiple]="false">
       </ngx-dropzone>
 
       <ngx-dropzone-image-preview *ngIf="img" [file]="img" [removable]="true" (removed)="eliminarImg()">
+
       </ngx-dropzone-image-preview>
-      <form [formGroup]="formInfo">
-        <div class="campo">
-          <label>RFC:</label>
-          <input type="text" class="form-input" formControlName="rfc">
-        </div>
-        <div class="campo">
-          <label>Fecha de registro:</label>
-          <input type="text" class="form-input" formControlName="registro">
-        </div>
-      </form>
     </div>
 
-    <form class="derecha" [formGroup]="formPerfil" (submit)="guardar()">
+    <div class="derecha col-8">
+
       <div class="boton text-right">
-        <button type="submit" class="btn mr" *ngIf="formPerfil.enabled">Guardar</button>
+        <button type="submit" class="btn guardar mr" *ngIf="formPerfil.enabled">Guardar</button>
         <button type="button" *ngIf="formPerfil.disabled" (click)="editar()" class="btn">Editar</button>
         <button type="button" *ngIf="formPerfil.enabled" (click)="editar()" class="btn">Cancelar</button>
       </div>
-      <div class="contacto mt-1">
 
-        <h4 class="text-center">Contacto</h4>
-        <div class="campo mt">
-          <label>Nombre:</label>
-          <input formControlName="nombre" type="text" class="form-input">
-        </div>
-        <div class="row flex space-between">
-          <div class="campo mt telefono">
-            <label>Telefono:</label>
-            <input formControlName="telefono" type="text" class="form-input">
+      <form [formGroup]="formPerfil" (submit)="guardar()">
+        <fieldset class="contacto mt-1">
+          <h4 class="text-center">Contacto</h4>
+
+          <div class="flex space-between mt-1">
+          
+            <div class="form-campo col-6">
+              <label class="mr-1">Nombre:</label>
+              <input formControlName="nombre" type="text" class="form-input w-100">
+            </div>
+          
+            <div class="form-campo col-6">
+              <label class="mr-1">RFC:</label>
+              <input formControlName="rfc" type="text" class="form-input w-100">
+            </div>
+
           </div>
-          <div class="campo mt emil">
-            <label>Email:</label>
-            <input formControlName="email" type="text" class="form-input">
+
+          <div class="flex space-between">
+            <div class="form-campo mt col-6">
+              <label>Telefono:</label>
+              <input formControlName="telefono" type="text" class="form-input w-100">
+            </div>
+            <div class="form-campo mt col-6">
+              <label>Email:</label>
+              <input formControlName="email" type="text" class="form-input w-100">
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="domicilio mt-1">
-        <h4 class="text-center">Domicilio</h4>
-        <div class="campo mt">
-          <label>Calle:</label>
-          <input formControlName="calle" type="text" class="form-input">
-        </div>
-        <div class="campo mt">
-          <label>Numero:</label>
-          <input formControlName="numero" type="text" class="form-input">
-        </div>
-        <div class="campo mt">
-          <label>Codigo Postal:</label>
-          <input formControlName="cp" type="text" class="form-input">
-        </div>
-        <div class="campo mt">
-          <label>Colonia:</label>
-          <input formControlName="colonia" type="text" class="form-input">
-        </div>
-      </div>
-    </form>
+        </fieldset>
+        <fieldset class="mt-1">
+          <h4 class="text-center">Domicilio</h4>
+          <div class="flex space-between">
+            <div class="form-campo col-4 mt">
+              <label>Calle:</label>
+              <input formControlName="calle" type="text" class="form-input w-100">
+            </div>
+            <div class="form-campo col-4 mt">
+              <label>Numero Int:</label>
+              <input formControlName="numeroInt" type="text" class="form-input w-100">
+            </div>
+            <div class="form-campo col-4 mt">
+              <label>Numero Ext:</label>
+              <input formControlName="numeroExt" type="text" class="form-input w-100">
+            </div>
+          </div>
+          <div class="flex space-between">
+            <div class="form-campo col-6 mt">
+              <label>Codigo Postal:</label>
+              <input formControlName="cp" type="text" class="form-input w-100">
+            </div>
+            <div class="form-campo col-6 mt">
+              <label>Colonia:</label>
+              <input formControlName="colonia" type="text" class="form-input w-100">
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+    </div>
   </div>
 </div>
-
-<!-- <div class="portada"></div>
-
-<div class="perfil-nombre">
-    <img src="assets/img/perfil.jpg" alt="foto de perfil">
-    <div class="texto-perfil">
-        <h2>Ricardo Garcia</h2>
-        <p>Vendedor Gold</p>
-    </div>
-</div>
-
-<main>
-    <div class="contenedor fadeIn fast">
-
-        <div class="botones mtb-2">
-          
-          <button *ngIf="disabled===false" (click)="onSubmit()" class="btn btn-primary mr-2" type="button">
-            <i class="fa fa-save"></i> Guardar</button>
-          
-          <button class="btn btn-primary" type="button" [class.btn-danger]="!disabled" (click)="activarEditar()">
-            <i class="fa fa-pen" [class.fa-times]="!disabled"></i> {{ texto }}</button>
-      
-        </div>
-      
-        <form [formGroup]="form">
-                  
-            <fieldset class="form-fieldset">
-      
-              <legend>Datos Generales</legend>
-              
-                <div class="form-campo">
-                  <label for="nombre">Nombre de la Empresa</label>
-                  <input
-                    type="text" class="form-input"
-                    formControlName="nombreEmpresa">
-                </div>
-      
-                <div class="form-campo">
-                  <label for="rfc">RFC</label>
-                  <input 
-                    type="text" class="form-input"
-                    formControlName="rfc">
-                </div>
-      
-                <div class="correo form-campo">
-                  <label for="correo">Dirección de Correo Electrónico</label>
-                  <input
-                    type="email" class="form-input"
-                    formControlName="correo">
-                </div>
-                
-                <div class="tel form-campo">
-                  <label for="tel">Teléfono</label>
-                  <input
-                    type="tel" class="form-input"
-                    formControlName="telefono">
-                </div>
-      
-            </fieldset>
-      
-            <fieldset class="form-fieldset" formGroupName="domicilio">
-      
-              <legend>Datos de Ubicación</legend>
-              
-                <div class="form-campo">
-                  <label for="calle">Calle</label>
-                  <input formControlName="calle"
-                    class="form-input" type="text" id="calle">
-                </div>
-                
-                <div class="form-campo">
-                  <label for="codigoPostal">CP</label>
-                  <input formControlName="cp"
-                    class="form-input" type="text" id="codigoPostal">
-                </div>
-                
-                <div class="form-campo">
-                  <label for="numero-ext">Número</label>
-                  <input formControlName="numero"
-                    class="form-input" type="number" id="numero-ext">
-                </div>
-      
-                <div class="form-campo">
-                  <label for="colonia">Colonia</label>
-                  <input formControlName="colonia"
-                    class="form-input" type="text" id="colonia">
-                </div>
-                
-                <div class="form-campo">
-                  <label for="ciudad">Ciudad</label>
-                  <input formControlName="ciudad"
-                    class="form-input" type="text" id="ciudad">
-                </div>
-      
-            </fieldset>
-            
-        </form>
-        <!-- <pre>
-          Estado del Formulario {{ form.valid }}
-          <br>
-          Status {{ form.status }}
-        </pre>
-        
-        <pre>
-          {{ form.value | json }}
-        </pre>
-         -->
-<!-- </div> -->
-<!-- </main> -->

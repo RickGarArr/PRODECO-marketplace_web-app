@@ -9,7 +9,7 @@ import * as moment from 'moment';
 })
 export class PedidoComponent implements OnInit {
 
-  public fecha = moment().locale('es').format('h:mm:ss a, MMMM D YYYY');
+  public fecha = moment().locale('es').format('D/MM/YYYY, h:mm:ss a');
   public estado = new FormControl('pendiente');  
   constructor() { }
 

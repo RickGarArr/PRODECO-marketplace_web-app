@@ -1,0 +1,37 @@
+<div class="contenedor fadeIn fast">
+    <div class="card mtb-2">
+        <div class="flex space-evenly">
+            <div class="col-4 chats pd">
+                <div class="">
+                    <input type="text" placeholder="Buscar Contacto" class="form-input w-100 mb">
+                </div>
+                <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7]" class="chat pd">
+                    <label (click)="click($event)" class="personas">
+                        <p class="fw-500">Ricardo Garcia</p>
+                        <p class="fw-300">{{fecha}}</p>
+                    </label>    
+                </div>
+            </div>
+            <div class="col-8 pd mensajes">
+                <div class="mensaje pd ml mt recibido">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sint voluptatem voluptatibus iste officia beatae mollitia commodi inventore adipisci facilis, alias illum error doloremque numquam dicta ipsum consequuntur voluptas. Molestias!</p>
+                </div>
+                <div class="mensaje pd ml mt enviado">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sint voluptatem voluptatibus iste officia beatae mollitia commodi inventore adipisci facilis, alias illum error doloremque numquam dicta ipsum consequuntur voluptas. Molestias!</p>
+                </div>
+                <div class="mensaje pd ml mt recibido">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sint voluptatem voluptatibus iste officia beatae mollitia commodi inventore adipisci facilis, alias illum error doloremque numquam dicta ipsum consequuntur voluptas. Molestias!</p>
+                </div>
+                <div class="mensaje pd ml mt enviado">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sint voluptatem voluptatibus iste officia beatae mollitia commodi inventore adipisci facilis, alias illum error doloremque numquam dicta ipsum consequuntur voluptas. Molestias!</p>
+                </div>
+                <div class="mensaje pd ml mt recibido">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sint voluptatem voluptatibus iste officia beatae mollitia commodi inventore adipisci facilis, alias illum error doloremque numquam dicta ipsum consequuntur voluptas. Molestias!</p>
+                </div>
+                <div class="mensaje pd ml mt enviado">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sint voluptatem voluptatibus iste officia beatae mollitia commodi inventore adipisci facilis, alias illum error doloremque numquam dicta ipsum consequuntur voluptas. Molestias!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,21 +12,18 @@ export class PerfilComponent implements OnInit {
   public fecha = moment().locale('es').format('h:mm:ss a, MMMM D YYYY');
   public img;
   public formPerfil: FormGroup;
-  public formInfo: FormGroup;
   
   constructor( private formBuilder: FormBuilder ) {
     this.formPerfil = this.formBuilder.group({
       nombre: new FormControl('Prodeco S.A. de C.V.', [Validators.required]),
       telefono: new FormControl('677-106-6402', [Validators.required]),
+      rfc: new FormControl('GAAR9702071532', [Validators.required]),
       email: new FormControl('prodeco@prodeco.com', [Validators.required, Validators.email]),
       calle: new FormControl('Pereyra', [Validators.required]),
-      numero: new FormControl('317', [Validators.required]),
+      numeroInt: new FormControl('317', [Validators.required]),
+      numeroExt: new FormControl('S/N', [Validators.required]),
       cp: new FormControl('34000', [Validators.required]),
       colonia: new FormControl('Zona Centro', [Validators.required]),
-    });
-    this.formInfo = this.formBuilder.group({
-      rfc: new FormControl('GAAR7902156DS', [Validators.required]),
-      registro: new FormControl(this.fecha, [Validators.required])
     });
   }
 
@@ -45,6 +42,7 @@ export class PerfilComponent implements OnInit {
     } else {
       this.formPerfil.enable();
       this.formPerfil.controls['nombre'].disable();
+      this.formPerfil.controls['rfc'].disable();
     }
   }
 

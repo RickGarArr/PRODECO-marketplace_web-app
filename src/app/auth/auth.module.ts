@@ -7,6 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthRoutingModule } from './auth-routing.module';
+import { AuthHeaderComponent } from './auth-header/auth-header.component';
+import { AuthComponent } from './auth.component';
 
 @NgModule({
     imports: [
@@ -18,8 +20,10 @@ import { AuthRoutingModule } from './auth-routing.module';
         AuthRoutingModule
     ],
     declarations: [
+        AuthComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        AuthHeaderComponent,
     ],
     exports: [
         LoginComponent,

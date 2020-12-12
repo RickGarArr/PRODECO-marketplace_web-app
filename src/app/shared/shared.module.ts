@@ -13,12 +13,12 @@ import { FooterComponent } from './footer/footer.component';
     declarations: [
         NavbarComponent,
         NoPageFound,
-        FooterComponent
+        FooterComponent,
     ],
     exports: [
         NavbarComponent,
         NoPageFound,
-        FooterComponent
+        FooterComponent,
     ]
 })
 export class SharedModule {}
